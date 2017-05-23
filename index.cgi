@@ -52,7 +52,7 @@ echo "</table>"
 
 echo "<h1>Disk and Inodes info</h1>"
 echo "<table width=80% border=1><tr><th>File system</th><th>%Free space</th><th>Free space</th><th>%Free inodes</th><th>Free inodes</th></tr>"  
-echo "<tr>$(cat /var/log/df.log| grep -v /dev* |grep -v /proc* |grep -v /sys*  | awk ' NR>1 {printf("<td align=center>%s</td><td align=center> %s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td></tr>",$1,(100-$2),$3,(100-$4),$5)}')</table>"
+echo "$(cat /var/log/df.log| grep -v /dev* |grep -v /proc* |grep -v /sys*  | awk ' NR>1 {printf("<tr><td align=center>%s</td><td align=center> %s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td></tr>",$1,(100-$2),$3,(100-$4),$5)}')</table>"
 
 
 
