@@ -1,0 +1,7 @@
+*/1 * * * * iostat -dx | grep dm-[0-1] >> /var/log/iostat.log
+*/1 * * * * mpstat 2 5 | tail -n 1 >> /var/log/mpstat.log
+*/1 * * * * ss -t > /var/log/tcp.log
+*/1 * * * * ss -u > /var/log/udp.log
+*/1 * * * * df -h --output=source,pcent,size,ipcent,itotal > /var/log/df.log
+*/1 * * * * cat /proc/net/dev | awk ' NR > 2 {print $0}' > /var/log/network.log
+
