@@ -5,7 +5,7 @@ echo "<html><head><title>Bash as CGI2</title>"
 echo "<meta http-equiv='refresh' content='5'>"
 echo "</head><body>"
 
-echo "<table width='80%' align='center' border='1'>"
+echo "<table width='56%' align='center' border='1'>"
 echo "<th>NGINX_ADDR:</th>"
 echo "<th>NGINX_PORT:</th>"
 echo "<th>CLIENT_ADDR:</th> "
@@ -15,6 +15,7 @@ echo "<tr><td align='center'>$REMOTE_ADDR </td>"
 echo "<td align='center'>$REMOTE_PORT</td>"
 echo "<td align='center'>$HTTP_X_REAL_IP </td>"
 echo "<td align='center'>$HTTP_X_FORWARDER_FOR_PORT </td>"
+echo "<td align='center'>$HTTP_X_NGX_VERSION </td></tr>"
 echo "</table>"
 
 NCPU=$(lscpu | grep ^CPU\(s\) | awk '{print $2}')
